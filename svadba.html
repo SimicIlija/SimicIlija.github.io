@@ -1,1 +1,9 @@
-<meta http-equiv="refresh" content="0; url=https://drive.google.com/drive/folders/1Sv3cQTLO_NfNhZwsu2OR2Bbje7LrrsYU?usp=sharing"> 
+<script>
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // redirects if mobile
+        window.location.href = 'googledrive://https://drive.google.com/drive/folders/1Sv3cQTLO_NfNhZwsu2OR2Bbje7LrrsYU?usp=sharing';
+    } else {
+        // redirects if whatever else
+        window.location.href = 'https://drive.google.com/drive/folders/1Sv3cQTLO_NfNhZwsu2OR2Bbje7LrrsYU?usp=sharing';
+    }
+</script>
