@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gracie Barra Graz — Our Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="team-page">
+
+  <!-- Header -->
+  <header class="team-header">
+    <a class="team-header-left" href="index.html">
+      <gb-logo size="42"></gb-logo>
+      <span class="a-header-mark-top" style="border-left:1px solid rgba(255,255,255,0.18);padding-left:10px">GRAZ</span>
+    </a>
+    <div class="team-header-right">
+      <a class="team-back" href="index.html">
+        <gb-icon name="arrow" size="15"></gb-icon><span data-i18n="team.back"></span>
+      </a>
+      <gb-lang-toggle></gb-lang-toggle>
+    </div>
+  </header>
+
+  <main class="team-main">
+
+    <!-- Hero -->
+    <gb-reveal>
+      <gb-kicker key="team.label"></gb-kicker>
+      <h1 class="team-h1"><span data-i18n="team.heading"></span><span class="a-accent">.</span></h1>
+      <p class="team-intro" data-i18n="team.intro"></p>
+    </gb-reveal>
+
+    <!-- Lead coach -->
+    <gb-reveal>
+      <div class="lead-card">
+        <div class="lead-photo"><gb-placeholder label="photo — Alen Ramic" caption-pos="bottom"></gb-placeholder></div>
+        <div class="lead-body">
+          <div class="belt-pill">
+            <span class="belt-pill-sw"></span>
+            <span class="belt-pill-text" data-i18n="team.lead.belt"></span>
+          </div>
+          <h2 class="lead-name">Alen Ramic</h2>
+          <div class="lead-role"><span data-i18n="team.lead.role"></span> · Gracie Barra Graz</div>
+          <p class="lead-bio" data-i18n="coach.bio"></p>
+          <div class="a-lineage" id="team-lineage"></div>
+        </div>
+      </div>
+    </gb-reveal>
+
+    <!-- Group head -->
+    <gb-reveal>
+      <div class="group-head">
+        <span class="group-head-txt" data-i18n="team.groupLabel"></span>
+        <span class="group-head-rule"></span>
+      </div>
+    </gb-reveal>
+
+    <!-- Members grid -->
+    <div class="team-grid" id="team-members"></div>
+
+    <!-- CTA back -->
+    <gb-reveal>
+      <a class="team-cta" href="index.html">
+        <div>
+          <div class="team-cta-h" data-i18n="hero.ctaPrimary"></div>
+          <div class="team-cta-sub">Kastellfeldgasse 31, 8010 Graz</div>
+        </div>
+        <gb-icon name="arrow" size="24"></gb-icon>
+      </a>
+    </gb-reveal>
+  </main>
+
+  <!-- Footer -->
+  <footer class="team-footer">
+    <div class="a-footer-logo"><gb-logo size="54"></gb-logo></div>
+    <div class="a-footer-name">Gracie Barra Graz</div>
+    <p class="a-footer-tag" data-i18n="footer.tagline"></p>
+    <div class="a-footer-social">
+      <gb-icon name="instagram" size="22"></gb-icon>
+      <gb-icon name="facebook" size="22"></gb-icon>
+      <gb-icon name="youtube" size="22"></gb-icon>
+    </div>
+    <div class="a-footer-rights">© 2026 GRACIE BARRA GRAZ · <span data-i18n="footer.rights"></span></div>
+  </footer>
+</div>
+
+<script src="content.js"></script>
+<script src="components.js"></script>
+<script>
+(function () {
+  const { T, tr } = window.GB;
+  const L = (n) => tr(n, window.gbLang);
+
+  function renderLineage() {
+    const el = document.getElementById("team-lineage");
+    el.innerHTML = T.coach.lineage.map((n, i) => `
+      ${i > 0 ? `<span class="a-lineage-arrow"><gb-icon name="chevron" size="14"></gb-icon></span>` : ""}
+      <span class="a-lineage-pill ${i === T.coach.lineage.length - 1 ? 'is-current' : ''}">${n}</span>
+    `).join("");
+  }
+  function renderMembers() {
+    document.getElementById("team-members").innerHTML = T.team.members.map(m => `
+      <div class="member-card">
+        <div class="member-photo"><gb-placeholder label="photo — ${m.name}" caption-pos="bottom"></gb-placeholder></div>
+        <div class="member-body">
+          <div class="member-name">${m.name}</div>
+          <div class="member-role">${L(m.role)}</div>
+          <p class="member-bio">${L(T.team.bioTBC)}</p>
+        </div>
+      </div>`).join("");
+  }
+  function renderAll() {
+    renderLineage();
+    renderMembers();
+    window.gbAutoBind(document);
+  }
+  renderAll();
+  window.gbOnLang(renderAll);
+})();
+</script>
+</body>
+</html>

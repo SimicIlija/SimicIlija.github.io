@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gracie Barra Graz — Jiu-Jitsu For Everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="gb-wrap">
+
+  <!-- ── Utility bar ── -->
+  <div class="b-utility">
+    <span class="b-utility-dot">●</span> <span data-i18n="contact.firstFree"></span> · Kastellfeldgasse 31
+  </div>
+
+  <!-- ── Header ── -->
+  <header class="b-header">
+    <div class="b-header-left">
+      <gb-logo size="40"></gb-logo>
+      <span class="b-header-mark">GRAZ</span>
+    </div>
+    <div class="b-header-right">
+      <gb-lang-toggle></gb-lang-toggle>
+      <button class="b-menu-btn" aria-label="menu"><gb-icon name="menu" size="20"></gb-icon></button>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="b-hero">
+    <div class="b-hero-bg">
+      <gb-placeholder label="hero — sparring, low angle" caption-pos="top"></gb-placeholder>
+      <div class="b-hero-grad"></div>
+    </div>
+    <div class="b-hero-content">
+      <div class="b-hero-kicker"><span data-i18n="hero.kicker"></span></div>
+      <h1 id="b-hero-title"></h1>
+      <p class="b-hero-sub" data-i18n="hero.sub"></p>
+    </div>
+    <!-- CTA bar -->
+    <div class="b-cta-bar">
+      <button onclick="document.getElementById('b-trial').scrollIntoView({behavior:'smooth'})">
+        <span data-i18n="hero.ctaPrimary"></span>
+        <gb-icon name="arrow" size="24"></gb-icon>
+      </button>
+    </div>
+    <!-- Stat ticker -->
+    <div class="b-stats">
+      <div class="b-stat"><div class="b-stat-num">1000+</div><div class="b-stat-lbl" data-i18n="about.stat1"></div></div>
+      <div class="b-stat"><div class="b-stat-num">9</div><div class="b-stat-lbl" data-i18n="about.stat3"></div></div>
+      <div class="b-stat"><div class="b-stat-num">10+</div><div class="b-stat-lbl" data-i18n="about.stat2"></div></div>
+    </div>
+  </section>
+
+  <!-- ── 01 Classes ── -->
+  <section class="b-sec">
+    <gb-reveal>
+      <div class="b-sechead">
+        <div class="b-sechead-top">
+          <span class="b-sechead-num">01</span>
+          <span class="b-sechead-rule"></span>
+          <span class="b-sechead-lbl" data-i18n="classes.label"></span>
+        </div>
+        <h2 class="b-sechead-title" data-i18n="classes.heading"></h2>
+      </div>
+    </gb-reveal>
+    <div class="b-classes" id="b-classes"></div>
+  </section>
+
+  <!-- ── 02 Schedule ── -->
+  <section class="b-sched">
+    <gb-reveal>
+      <div class="b-sechead">
+        <div class="b-sechead-top">
+          <span class="b-sechead-num">02</span>
+          <span class="b-sechead-rule"></span>
+          <span class="b-sechead-lbl" data-i18n="schedule.label"></span>
+        </div>
+        <h2 class="b-sechead-title" data-i18n="schedule.heading"></h2>
+      </div>
+    </gb-reveal>
+    <div class="b-sched-list" id="b-sched-list"></div>
+    <a class="b-sched-map" id="b-sched-map" target="_blank" rel="noreferrer">
+      <gb-icon name="pin" size="22"></gb-icon>
+      <div style="flex:1">
+        <div class="b-sched-map-addr"></div>
+        <div class="b-sched-map-nav"></div>
+      </div>
+      <gb-icon name="arrow" size="20"></gb-icon>
+    </a>
+  </section>
+
+  <!-- ── 03 Coach ── -->
+  <section class="b-sec">
+    <gb-reveal>
+      <div class="b-sechead">
+        <div class="b-sechead-top">
+          <span class="b-sechead-num">03</span>
+          <span class="b-sechead-rule"></span>
+          <span class="b-sechead-lbl" data-i18n="coach.label"></span>
+        </div>
+        <h2 class="b-sechead-title">Alen Ramic</h2>
+      </div>
+    </gb-reveal>
+    <gb-reveal>
+      <div class="b-coach-top">
+        <div class="b-coach-photo"><gb-placeholder label="coach"></gb-placeholder></div>
+        <div class="b-coach-info">
+          <div class="b-coach-role" data-i18n="coach.role"></div>
+          <div class="b-coach-lineage" id="b-coach-lineage"></div>
+        </div>
+      </div>
+      <p class="b-coach-bio" data-i18n="coach.bio"></p>
+      <a class="b-coach-link" href="team.html">
+        <span data-i18n="team.cta"></span><gb-icon name="arrow" size="18"></gb-icon>
+      </a>
+    </gb-reveal>
+  </section>
+
+  <!-- ── 04 BJJ ── -->
+  <section class="b-sec" style="padding-top:0">
+    <gb-reveal>
+      <div class="b-sechead">
+        <div class="b-sechead-top">
+          <span class="b-sechead-num">04</span>
+          <span class="b-sechead-rule"></span>
+          <span class="b-sechead-lbl" data-i18n="bjj.label"></span>
+        </div>
+        <h2 class="b-sechead-title" data-i18n="bjj.heading"></h2>
+      </div>
+    </gb-reveal>
+    <gb-reveal>
+      <div class="b-video">
+        <gb-placeholder label="intro video"></gb-placeholder>
+        <div class="b-video-play"><div class="b-video-btn"><gb-icon name="play" size="24"></gb-icon></div></div>
+      </div>
+      <p class="b-bjj-body" data-i18n="bjj.body"></p>
+    </gb-reveal>
+  </section>
+
+  <!-- ── 05 FAQ ── -->
+  <section class="b-sec" style="padding-top:0">
+    <gb-reveal>
+      <div class="b-sechead">
+        <div class="b-sechead-top">
+          <span class="b-sechead-num">05</span>
+          <span class="b-sechead-rule"></span>
+          <span class="b-sechead-lbl" data-i18n="faq.label"></span>
+        </div>
+        <h2 class="b-sechead-title" data-i18n="faq.heading"></h2>
+      </div>
+    </gb-reveal>
+    <gb-reveal>
+      <gb-accordion key="faq.items" numbered></gb-accordion>
+    </gb-reveal>
+  </section>
+
+  <!-- ── Trial band ── -->
+  <section class="b-trial" id="b-trial">
+    <gb-logo size="240" white class="b-trial-bg"></gb-logo>
+    <div class="b-trial-inner">
+      <div class="b-trial-tag" data-i18n="trial.tag"></div>
+      <h2 data-i18n="trial.heading"></h2>
+      <p data-i18n="trial.text"></p>
+      <button class="b-trial-btn">
+        <span data-i18n="trial.cta"></span><gb-icon name="arrow" size="20"></gb-icon>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── Sponsors ticker ── -->
+  <div class="b-sponsors">
+    <div class="b-sponsors-lbl" data-i18n="sponsors.label"></div>
+    <div class="b-sponsors-marq" id="b-sponsors-marq"></div>
+  </div>
+
+  <!-- ── 06 Contact ── -->
+  <section class="b-sec">
+    <gb-reveal>
+      <div class="b-sechead">
+        <div class="b-sechead-top">
+          <span class="b-sechead-num">06</span>
+          <span class="b-sechead-rule"></span>
+          <span class="b-sechead-lbl" data-i18n="contact.label"></span>
+        </div>
+        <h2 class="b-sechead-title" data-i18n="contact.heading"></h2>
+      </div>
+    </gb-reveal>
+    <a class="b-map" id="b-map" target="_blank" rel="noreferrer">
+      <gb-placeholder label="map — Kastellfeldgasse 31"></gb-placeholder>
+    </a>
+    <div class="b-contact-grid" id="b-contact-grid"></div>
+    <div class="b-contact-cta">
+      <a id="b-whatsapp" class="b-contact-cta-primary" target="_blank" rel="noreferrer">
+        <gb-icon name="whatsapp" size="18"></gb-icon>WhatsApp
+      </a>
+      <a id="b-viber" class="b-contact-cta-ghost">Viber</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="b-footer">
+    <div class="b-footer-top">
+      <gb-logo size="38"></gb-logo>
+      <div>
+        <div class="b-footer-name">GB GRAZ</div>
+        <div class="b-footer-tag" data-i18n="footer.tagline"></div>
+      </div>
+    </div>
+    <div class="b-footer-social">
+      <gb-icon name="instagram" size="22"></gb-icon>
+      <gb-icon name="facebook" size="22"></gb-icon>
+      <gb-icon name="youtube" size="22"></gb-icon>
+    </div>
+    <div class="b-footer-rights">© 2026 GRACIE BARRA GRAZ · <span data-i18n="footer.rights"></span></div>
+  </footer>
+
+</div>
+
+<script src="content.js"></script>
+<script src="components.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

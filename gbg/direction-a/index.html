@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gracie Barra Graz — Jiu-Jitsu For Everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="gb-wrap">
+
+  <!-- ── Header ── -->
+  <header class="a-header">
+    <div class="a-header-left">
+      <gb-logo size="44"></gb-logo>
+      <div class="a-header-mark">
+        <div class="a-header-mark-top">GRAZ</div>
+        <div class="a-header-mark-sub">BJJ ACADEMY</div>
+      </div>
+    </div>
+    <div class="a-header-right">
+      <gb-lang-toggle></gb-lang-toggle>
+      <button class="a-menu-btn" aria-label="menu"><gb-icon name="menu" size="24"></gb-icon></button>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="a-hero">
+    <gb-placeholder label="hero — open mat / roll" caption-pos="top"></gb-placeholder>
+    <div class="a-hero-grad"></div>
+    <div class="a-hero-content">
+      <gb-kicker key="hero.kicker"></gb-kicker>
+      <h1>
+        <span data-i18n="hero.title1"></span><br />
+        <span class="a-accent" data-i18n="hero.title2"></span>
+      </h1>
+      <p class="a-hero-sub" data-i18n="hero.sub"></p>
+      <div class="a-hero-ctas">
+        <a class="a-btn a-btn-primary" href="#trial"><span data-i18n="hero.ctaPrimary"></span><gb-icon name="arrow" size="17"></gb-icon></a>
+        <a class="a-btn a-btn-ghost" href="#schedule"><span data-i18n="hero.ctaSecondary"></span><gb-icon name="arrow" size="17"></gb-icon></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Values strip ── -->
+  <div class="a-values">
+    <gb-marquee id="a-marquee-values"></gb-marquee>
+  </div>
+
+  <!-- ── About ── -->
+  <section class="a-sec" id="a-about">
+    <gb-reveal>
+      <gb-kicker key="about.label"></gb-kicker>
+      <h2><span data-i18n="about.heading"></span><span class="a-accent">.</span></h2>
+      <p data-i18n="about.body"></p>
+      <div class="a-stats">
+        <div class="a-stat"><div class="a-stat-num">1000+</div><div class="a-stat-lbl" data-i18n="about.stat1"></div></div>
+        <div class="a-stat"><div class="a-stat-num">10+</div><div class="a-stat-lbl" data-i18n="about.stat2"></div></div>
+        <div class="a-stat"><div class="a-stat-num">9</div><div class="a-stat-lbl" data-i18n="about.stat3"></div></div>
+      </div>
+    </gb-reveal>
+  </section>
+
+  <!-- ── Classes ── -->
+  <section class="a-sec" id="a-classes" style="padding-top:12px">
+    <gb-reveal>
+      <gb-kicker key="classes.label"></gb-kicker>
+      <h2 data-i18n="classes.heading"></h2>
+    </gb-reveal>
+    <div class="a-classes" id="a-classes-list"></div>
+  </section>
+
+  <!-- ── Schedule ── -->
+  <section class="a-sched" id="schedule">
+    <div class="a-sched-head">
+      <gb-reveal>
+        <gb-kicker key="schedule.label"></gb-kicker>
+        <h2 data-i18n="schedule.heading"></h2>
+        <p data-i18n="schedule.note" style="font-size:14px"></p>
+      </gb-reveal>
+    </div>
+    <div class="a-day-tabs" id="a-day-tabs"></div>
+    <div class="a-sessions">
+      <div class="a-sess-day" id="a-sess-day"></div>
+      <div id="a-sess-list"></div>
+    </div>
+    <a class="a-loc-card" id="a-loc-card" target="_blank" rel="noreferrer">
+      <span class="a-loc-icon"><gb-icon name="pin" size="22"></gb-icon></span>
+      <div style="flex:1">
+        <div class="a-loc-addr"></div>
+        <div class="a-loc-nav"></div>
+      </div>
+      <span class="a-loc-arrow"><gb-icon name="arrow" size="18"></gb-icon></span>
+    </a>
+  </section>
+
+  <!-- ── Coach ── -->
+  <section class="a-sec">
+    <gb-reveal>
+      <gb-kicker key="coach.label"></gb-kicker>
+      <div class="a-coach-portrait">
+        <gb-placeholder label="coach portrait"></gb-placeholder>
+        <div class="a-coach-portrait-grad"></div>
+        <div class="a-coach-portrait-text">
+          <h3 class="a-coach-name">Alen Ramic</h3>
+          <div class="a-coach-role" data-i18n="coach.role"></div>
+        </div>
+      </div>
+      <p data-i18n="coach.bio"></p>
+      <div class="a-lineage" id="a-lineage"></div>
+      <div style="margin-top:22px"><a class="a-btn a-btn-ghost" href="team.html"><span data-i18n="team.cta"></span><gb-icon name="arrow" size="17"></gb-icon></a></div>
+    </gb-reveal>
+  </section>
+
+  <!-- ── BJJ video ── -->
+  <section class="a-sec" style="padding-top:8px">
+    <gb-reveal>
+      <gb-kicker key="bjj.label"></gb-kicker>
+      <h2 data-i18n="bjj.heading" style="font-size:30px"></h2>
+      <div class="a-video">
+        <gb-placeholder label="intro video"></gb-placeholder>
+        <div class="a-video-play"><div class="a-video-play-btn"><gb-icon name="play" size="26"></gb-icon></div></div>
+      </div>
+      <p data-i18n="bjj.body" style="font-size:15px"></p>
+    </gb-reveal>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="a-sec" id="faq" style="padding-top:8px">
+    <gb-reveal>
+      <gb-kicker key="faq.label"></gb-kicker>
+      <h2 data-i18n="faq.heading" style="font-size:32px;margin-bottom:18px"></h2>
+      <gb-accordion key="faq.items"></gb-accordion>
+    </gb-reveal>
+  </section>
+
+  <!-- ── Trial band ── -->
+  <section class="a-trial" id="trial">
+    <gb-logo size="150" white class="a-trial-bg1"></gb-logo>
+    <gb-logo size="160" white class="a-trial-bg2"></gb-logo>
+    <div class="a-trial-inner">
+      <h2 data-i18n="trial.heading"></h2>
+      <p data-i18n="trial.text"></p>
+      <button class="a-btn a-trial-btn"><span data-i18n="trial.cta"></span><gb-icon name="arrow" size="17"></gb-icon></button>
+    </div>
+  </section>
+
+  <!-- ── Sponsors ── -->
+  <section class="a-sec" style="padding-top:0;padding-bottom:50px">
+    <div class="a-sponsors-label" data-i18n="sponsors.label"></div>
+    <div class="a-sponsors-grid" id="a-sponsors"></div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section class="a-contact" id="contact">
+    <gb-kicker key="contact.label"></gb-kicker>
+    <h2 data-i18n="contact.heading" style="font-family:var(--hf);font-weight:700;font-size:32px;text-transform:uppercase;line-height:0.98;margin:0"></h2>
+    <a class="a-map" id="a-map" target="_blank" rel="noreferrer">
+      <gb-placeholder label="map — Kastellfeldgasse 31"></gb-placeholder>
+    </a>
+    <div id="a-info-list"></div>
+    <div class="a-contact-buttons">
+      <a id="a-whatsapp" class="a-btn a-btn-primary" target="_blank" rel="noreferrer"><gb-icon name="whatsapp" size="18"></gb-icon>WhatsApp</a>
+      <a id="a-viber" class="a-btn a-btn-ghost">Viber</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="a-footer">
+    <div class="a-footer-logo"><gb-logo size="54"></gb-logo></div>
+    <div class="a-footer-name">Gracie Barra Graz</div>
+    <p class="a-footer-tag" data-i18n="footer.tagline"></p>
+    <div class="a-footer-social">
+      <gb-icon name="instagram" size="22"></gb-icon>
+      <gb-icon name="facebook" size="22"></gb-icon>
+      <gb-icon name="youtube" size="22"></gb-icon>
+    </div>
+    <div class="a-footer-rights">© 2026 GRACIE BARRA GRAZ · <span data-i18n="footer.rights"></span></div>
+  </footer>
+
+</div>
+
+<script src="content.js"></script>
+<script src="components.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
